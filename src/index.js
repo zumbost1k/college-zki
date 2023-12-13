@@ -1,17 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import OneTimePadEncryption from './3laba';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import DoubleTranspositionCipher from './App';
+import MagicSquareEncryption from './2laba';
+import Navigation from './navigation';
+import FourthTask from './4laba';
+import FifthLaba from './5laba';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <HashRouter>
+      <Navigation />
+      <Routes>
+        <Route path='/1' element={<DoubleTranspositionCipher />} />
+        <Route path='/2' element={<MagicSquareEncryption />} />
+        <Route path='/3' element={<OneTimePadEncryption />} />
+        <Route path='/4' element={<FourthTask />} />
+        <Route path='/5' element={<FifthLaba />} />
+      </Routes>
+    </HashRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

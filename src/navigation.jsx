@@ -18,6 +18,9 @@ const Navigation = () => {
       <p>
         <Link to={'./5'}>5 лаба</Link>
       </p>
+      <p>
+        <Link to={'./6'}>6 лаба</Link>
+      </p>
     </div>
   );
 };

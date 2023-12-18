@@ -15,3 +15,8 @@ code {
 .vizener {
   padding: 5px;
 }
+
+.playf{
+  display: flex;
+  gap: 20px;
+}

@@ -21,6 +21,9 @@ const Navigation = () => {
       <p>
         <Link to={'./6'}>6 лаба</Link>
       </p>
+      <p>
+        <Link to={'./7'}>7 лаба</Link>
+      </p>
     </div>
   );
 };

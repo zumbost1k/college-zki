@@ -844,10 +844,14 @@ const FifthLaba = () => {
         }
       }
 
-      if (pos1.row === pos2.row || pos1.col === pos2.col) {
+      if (pos1.row === pos2.row) {
         let newCol1 = pos2.col === rows[pos1.row].length - 1 ? 0 : pos2.col + 1;
         let newCol2 = pos1.col === rows[pos2.row].length - 1 ? 0 : pos1.col + 1;
         encryptedText += rows[pos1.row][newCol2] + rows[pos2.row][newCol1];
+      } else if (pos1.col === pos2.col) {
+        let newRow1 = pos1.row === rows.length - 1 ? 0 : pos1.row + 1;
+        let newRow2 = pos2.row === rows.length - 1 ? 0 : pos2.row + 1;
+        encryptedText += rows[newRow1][pos1.col] + rows[newRow2][pos2.col];
       } else {
         encryptedText += rows[pos1.row][pos2.col] + rows[pos2.row][pos1.col];
       }

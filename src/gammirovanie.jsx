@@ -22,9 +22,10 @@ const Gammirovanie = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [gamma, setGamma] = useState(words()[currentIndex]);
+  let alphabetOld = 'abcdefghijklmnopqrstuvwxyz';
   const caesarCipher = () => {
     let result = '';
-    let alphabetOld = 'abcdefghijklmnopqrstuvwxyz';
+
     let alphabet = Array.from(new Set(key.toLowerCase() + alphabetOld)).join(
       ''
     );
@@ -139,7 +140,7 @@ const Gammirovanie = () => {
         setGamma(wordsArray[currentIndex]);
         setCurrentIndex((currentIndex + 1) % wordsArray.length);
       }
-    }, 2000);
+    }, 500);
 
     return () => clearInterval(intervalId);
   }, [words, currentIndex, shouldChangeGamma]);
@@ -182,8 +183,18 @@ const Gammirovanie = () => {
         <p>прочесть из файла</p>
         <input type='file' onChange={handleFileChange} />
       </label>
-      <p>зашифрованный текст по цезарю: {encryptText}</p>
-      <p>гамма: {gamma}</p>
+      <p>
+        зашифрованный текст по цезарю:{encryptText}
+        {encryptText.split('').map((letter) => {
+          return <div>{alphabetOld.indexOf(letter) + ` `} </div>;
+        })}
+      </p>
+      <p>
+        гамма:{' '}
+        {gamma.split('').map((letter) => {
+          return <div>{alphabetOld.indexOf(letter) + ` `} </div>;
+        })}
+      </p>
       <p>зашифрованный текст по гаммированию: {gammaDecryptText}</p>
     </div>
   );

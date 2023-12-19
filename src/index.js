@@ -9,6 +9,7 @@ import FourthTask from './4laba';
 import FifthLaba from './5laba';
 import SixthLaba from './6laba';
 import Gammirovanie from './gammirovanie';
+import Gamal from './gamal';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path='/5' element={<FifthLaba />} />
         <Route path='/6' element={<SixthLaba />} />
         <Route path='/7' element={<Gammirovanie />} />
+        <Route path='/8' element={<Gamal />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>,
